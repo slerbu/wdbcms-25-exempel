@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ip</h1>
+    <ul id="myList"></ul>
+
+    <div id="content"></div>
+    <script>
+        //hämta innehåll från API server
+        async function getContent() {
+            const resp = await fetch("http://vm4430.kaj.pouta.csc.fi:8281/");
+            const data = await resp.json()
+            console.log(data)
+            document.querySelector("#content").innerHTML=data.client_host
+          
+
+        }
+        
+        getContent();
+    </script>
+</body>
+</html>
