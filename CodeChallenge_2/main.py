@@ -8,9 +8,9 @@ app = FastAPI()
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 @app.get("/")
-def read_root(request: Request):
-    client_host = request.client.host
-    return {"client_host": client_host}
+def get_ip(request: Request):
+    ip = request.client.host
+    return {"ip": ip}
     
 
 if __name__ == "__main__":
