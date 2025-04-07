@@ -7,14 +7,31 @@ GET {{apiUrl}}/rooms
 
 ###
 
-GET {{apiUrl}}/rooms/0
+GET {{apiUrl}}/rooms/1
 
 ###
 
-POST {{apiUrl}}/bookings
+POST {{apiUrl}}/rooms
 Content-Type: application/json
 
 {
-    "guest": 1,
-    "room": 513
+    "room_number": 256,
+    "room_type": "double",
+    "price": 199
 }
+
+###
+
+POST  {{apiUrl}}/bookings
+Content-Type: application/json
+
+{
+    "guest_id": 1,
+    "room_id": 3,
+    "datefrom": "2025-02-12",
+    "dateto": "2025-02-12"
+}
+
+###
+
+GET  {{apiUrl}}/bookings
