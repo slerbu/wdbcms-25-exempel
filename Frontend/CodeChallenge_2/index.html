@@ -16,7 +16,7 @@
             const resp = await fetch("http://vm4430.kaj.pouta.csc.fi:8281/");
             const data = await resp.json()
             console.log(data)
-            document.querySelector("#content").innerHTML=data.client_host
+            document.querySelector("#content").innerHTML=data.ip
           
 
         }
